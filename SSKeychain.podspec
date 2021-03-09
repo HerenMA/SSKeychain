@@ -10,6 +10,8 @@ Pod::Spec.new do |s|
   
   s.ios.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.ios.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.tvos.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
+  s.tvos.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
   
   s.requires_arc = true
   s.default_subspec = 'Core'
@@ -18,9 +20,12 @@ Pod::Spec.new do |s|
     ss.source_files = 'SSKeychain/*.{h,m}'
   end
 
-  #s.subspec 'Framework' do |ss|
-  #  ss.ios.vendored_framework   = 'ios/SSKeychain.framework'
-  #end
+  s.subspec 'Framework' do |ss|
+    ss.osx.vendored_framework   = 'osx/SSKeychain.framework'
+    ss.ios.vendored_framework   = 'ios/SSKeychain.framework'
+    ss.tvos.vendored_framework   = 'tvos/SSKeychain.framework'
+    ss.watchos.vendored_framework   = 'watchos/SSKeychain.framework'
+  end
   
   s.frameworks = 'Security', 'Foundation'
   
