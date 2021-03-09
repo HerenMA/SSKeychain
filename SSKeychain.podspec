@@ -1,4 +1,4 @@
-Pod::Spec.new do |spec|
+Pod::Spec.new do |s|
   s.name         = 'SSKeychain'
   s.version      = '1.3.1'
   s.summary      = 'Simple Cocoa wrapper for the keychain that works on Mac and iOS.'
