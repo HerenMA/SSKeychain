@@ -8,11 +8,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/HerenMA/SSKeychain.git', :tag => s.version.to_s }
   s.description  = 'SSKeychain is a simple utility class for making the system keychain less sucky.'
   
-  s.ios.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.ios.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.tvos.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
-  s.tvos.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
-  
   s.requires_arc = true
   s.default_subspec = 'Core'
       
